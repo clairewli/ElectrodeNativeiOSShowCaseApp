@@ -11,6 +11,7 @@
 		306EE3A4204DFC3000820863 /* ERNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A3204DFC3000820863 /* ERNTabBarController.swift */; };
 		306EE3A6204DFC6E00820863 /* ERNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */; };
 		306EE3A8204DFD5100820863 /* ERNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A7204DFD5100820863 /* ERNNavigationController.swift */; };
+		30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */; };
 		C118CC8A1FEB115C008C4DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C118CC891FEB115C008C4DB5 /* AppDelegate.swift */; };
 		C118CC8E1FEB115C008C4DB5 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C118CC8D1FEB115C008C4DB5 /* MovieListViewController.swift */; };
 		C118CC911FEB115C008C4DB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C118CC8F1FEB115C008C4DB5 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		306EE3A3204DFC3000820863 /* ERNTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNTabBarController.swift; sourceTree = "<group>"; };
 		306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNBaseViewController.swift; sourceTree = "<group>"; };
 		306EE3A7204DFD5100820863 /* ERNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationController.swift; sourceTree = "<group>"; };
+		30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationCoordinator.swift; sourceTree = "<group>"; };
 		C118CC861FEB115C008C4DB5 /* ElectrodeNativeIOSShowCaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectrodeNativeIOSShowCaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C118CC891FEB115C008C4DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C118CC8D1FEB115C008C4DB5 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		30CA9022204F40610007D266 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		C118CC7D1FEB115C008C4DB5 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +134,7 @@
 		C118CC881FEB115C008C4DB5 /* ElectrodeNativeIOSShowCaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				30CA9022204F40610007D266 /* Navigation */,
 				C118CC8F1FEB115C008C4DB5 /* Main.storyboard */,
 				C118CC891FEB115C008C4DB5 /* AppDelegate.swift */,
 				C118CCD41FEB1B7D008C4DB5 /* ElectrodeNativeIOSShowCaseApp-Bridging-Header.h */,
@@ -145,6 +155,7 @@
 				306EE3A3204DFC3000820863 /* ERNTabBarController.swift */,
 				306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */,
 				306EE3A7204DFD5100820863 /* ERNNavigationController.swift */,
+				30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 			files = (
 				C118CC8E1FEB115C008C4DB5 /* MovieListViewController.swift in Sources */,
 				306EE3A4204DFC3000820863 /* ERNTabBarController.swift in Sources */,
+				30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */,
 				C1B8AE3E1FEC30E50087EF41 /* ElectrodeWrapper.m in Sources */,
 				C118CC8A1FEB115C008C4DB5 /* AppDelegate.swift in Sources */,
 				306EE3A8204DFD5100820863 /* ERNNavigationController.swift in Sources */,
