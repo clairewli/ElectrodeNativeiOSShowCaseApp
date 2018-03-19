@@ -11,6 +11,12 @@
 		306EE3A4204DFC3000820863 /* ERNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A3204DFC3000820863 /* ERNTabBarController.swift */; };
 		306EE3A6204DFC6E00820863 /* ERNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */; };
 		306EE3A8204DFD5100820863 /* ERNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A7204DFD5100820863 /* ERNNavigationController.swift */; };
+		3091A47220605C77000D8B62 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A47120605C77000D8B62 /* Route.swift */; };
+		3091A47420605D56000D8B62 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A47320605D56000D8B62 /* Navigator.swift */; };
+		3091A476206067F2000D8B62 /* MovieListRouteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */; };
+		3091A4782060681F000D8B62 /* MovieDetailRouteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A4772060681F000D8B62 /* MovieDetailRouteDelegate.swift */; };
+		3091A47A2060682C000D8B62 /* ColorPickerRouteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A4792060682C000D8B62 /* ColorPickerRouteDelegate.swift */; };
+		3091A47C20606FA2000D8B62 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A47B20606FA2000D8B62 /* Router.swift */; };
 		30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */; };
 		C118CC8A1FEB115C008C4DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C118CC891FEB115C008C4DB5 /* AppDelegate.swift */; };
 		C118CC8E1FEB115C008C4DB5 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C118CC8D1FEB115C008C4DB5 /* MovieListViewController.swift */; };
@@ -63,6 +69,12 @@
 		306EE3A3204DFC3000820863 /* ERNTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNTabBarController.swift; sourceTree = "<group>"; };
 		306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNBaseViewController.swift; sourceTree = "<group>"; };
 		306EE3A7204DFD5100820863 /* ERNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationController.swift; sourceTree = "<group>"; };
+		3091A47120605C77000D8B62 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		3091A47320605D56000D8B62 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRouteDelegate.swift; sourceTree = "<group>"; };
+		3091A4772060681F000D8B62 /* MovieDetailRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouteDelegate.swift; sourceTree = "<group>"; };
+		3091A4792060682C000D8B62 /* ColorPickerRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerRouteDelegate.swift; sourceTree = "<group>"; };
+		3091A47B20606FA2000D8B62 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationCoordinator.swift; sourceTree = "<group>"; };
 		C118CC861FEB115C008C4DB5 /* ElectrodeNativeIOSShowCaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectrodeNativeIOSShowCaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C118CC891FEB115C008C4DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,9 +119,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3091A46F20605C10000D8B62 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				3091A47120605C77000D8B62 /* Route.swift */,
+				3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */,
+				3091A4772060681F000D8B62 /* MovieDetailRouteDelegate.swift */,
+				3091A4792060682C000D8B62 /* ColorPickerRouteDelegate.swift */,
+				3091A47B20606FA2000D8B62 /* Router.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
 		30CA9022204F40610007D266 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				3091A46F20605C10000D8B62 /* Routes */,
+				3091A47320605D56000D8B62 /* Navigator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -267,11 +293,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3091A47220605C77000D8B62 /* Route.swift in Sources */,
+				3091A47420605D56000D8B62 /* Navigator.swift in Sources */,
 				C118CC8E1FEB115C008C4DB5 /* MovieListViewController.swift in Sources */,
+				3091A476206067F2000D8B62 /* MovieListRouteDelegate.swift in Sources */,
+				3091A47A2060682C000D8B62 /* ColorPickerRouteDelegate.swift in Sources */,
 				306EE3A4204DFC3000820863 /* ERNTabBarController.swift in Sources */,
 				30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */,
+				3091A4782060681F000D8B62 /* MovieDetailRouteDelegate.swift in Sources */,
 				C1B8AE3E1FEC30E50087EF41 /* ElectrodeWrapper.m in Sources */,
 				C118CC8A1FEB115C008C4DB5 /* AppDelegate.swift in Sources */,
+				3091A47C20606FA2000D8B62 /* Router.swift in Sources */,
 				306EE3A8204DFD5100820863 /* ERNNavigationController.swift in Sources */,
 				C118CCBE1FEB183C008C4DB5 /* ColorPickerViewController.swift in Sources */,
 				306EE3A6204DFC6E00820863 /* ERNBaseViewController.swift in Sources */,
