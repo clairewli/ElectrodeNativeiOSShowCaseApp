@@ -22,6 +22,7 @@ class ERNTabBarController: UITabBarController {
         super.viewDidLoad()
         let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
         let welcomeVC = sb.instantiateViewController(withIdentifier: "welcome")
+        let welcomeNavController = ERNNavigationController(rootViewController: welcomeVC)
         let image = UIImage(named: "first")
         welcomeVC.tabBarItem = UITabBarItem(title: "Welcome", image: UIImage(named: "first"), tag: 0)
         let moviewNavController = ERNNavigationController(rootViewController: MovieListViewController())
@@ -30,7 +31,7 @@ class ERNTabBarController: UITabBarController {
         pickerVC.tabBarItem   = UITabBarItem(title: "Movie", image: UIImage(named: "colorCircleArrow"), tag: 2)
         let moreVC = ERNBaseViewController()
         moreVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
-        self.viewControllers = [welcomeVC, moviewNavController, pickerVC, moreVC]
+        self.viewControllers = [welcomeNavController, moviewNavController, pickerVC, moreVC]
     }
 
 }

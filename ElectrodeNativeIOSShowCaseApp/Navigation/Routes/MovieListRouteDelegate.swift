@@ -10,6 +10,7 @@ import UIKit
 
 struct MovieListRouteDelegate: Routable {
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
-        
+        let moviewListvc = MovieListViewController()
+        currentViewController.navigationController?.pushViewController(moviewListvc, animated: false)
     }
 }

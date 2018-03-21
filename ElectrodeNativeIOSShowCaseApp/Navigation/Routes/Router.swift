@@ -8,9 +8,29 @@
 
 import UIKit
 
-struct Router: Routable {
+enum ValidRoute: String {
+    case welcome = "welcome"
+}
+
+class Router: Routable {
+    static let internalScheme = "walmart"
     var routes = [String: Routable]()
     var errorHandler: ErrorRoutable?
+    func register(route: String) {
+        let delegate = mapRouteWithDelegate(route: route)
+        routes[route] = delegate
+    }
+    
+    private func mapRouteWithDelegate(route: String) -> Routable? {
+        let route = ValidRoute(rawValue: route)
+        switch (route) {
+        case .welcome?:
+            return WelcomeRouteDelegate()
+        default:
+            return nil
+        }
+    }
+    
     func navigate(to route: Route, from currentViewController: UIViewController) throws {
         guard let delegate = routes[route.path] else {
             errorHandler?.handle(error: RouteError.NotFound, from: currentViewController)

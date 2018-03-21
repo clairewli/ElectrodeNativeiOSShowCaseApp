@@ -14,7 +14,7 @@
         <!--Intro-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="welcome" id="9pv-A4-QxB" customClass="IntroViewController" customModule="ElectrodeNativeIOSShowCaseApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcome" id="9pv-A4-QxB" customClass="WelcomeViewController" customModule="ElectrodeNativeIOSShowCaseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,21 +32,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-gU-Rbd">
+                                <rect key="frame" x="86.5" y="429" width="202" height="30"/>
+                                <state key="normal" title="Push Another View Controller"/>
+                                <connections>
+                                    <action selector="didPress:" destination="9pv-A4-QxB" eventType="touchUpInside" id="h59-SK-JjD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeT-vW-Kkf">
+                                <rect key="frame" x="123" y="398" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="A5M-7J-77L" secondAttribute="trailing" constant="20" id="4vb-ev-x9I"/>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="HeT-vW-Kkf" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="15.5" id="GRR-R3-GqO"/>
+                            <constraint firstItem="fHA-gU-Rbd" firstAttribute="top" secondItem="HeT-vW-Kkf" secondAttribute="bottom" constant="10" id="Mbg-bR-xkM"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KQZ-1w-vlD" secondAttribute="trailing" constant="20" id="hGU-1O-B8V"/>
+                            <constraint firstItem="fHA-gU-Rbd" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="iyX-Jf-94s"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tsR-hK-woN" secondAttribute="leading" constant="20" id="lyv-9T-ipm"/>
+                            <constraint firstItem="HeT-vW-Kkf" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="qYO-VU-6HR"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="20" id="tZb-Pq-oZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Intro" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="viewControllerLabel" destination="HeT-vW-Kkf" id="abQ-iO-Lrd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +129,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="ERNTabBarController" customModule="ElectrodeNativeIOSShowCaseApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="49e-Tb-3d3" customClass="ERNTabBarController" customModule="ElectrodeNativeIOSShowCaseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="VfM-2A-cjn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

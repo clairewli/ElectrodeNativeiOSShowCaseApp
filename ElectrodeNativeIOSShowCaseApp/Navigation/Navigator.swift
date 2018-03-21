@@ -8,30 +8,43 @@
 
 import UIKit
 
-struct Navigator {
-    private static var internalScheme = ""
+class Navigator {
+    static let sharedInstance = Navigator()
+    fileprivate let router = Router()
+    private  var internalScheme = ""
     
-    private static var routePathToDelegateMap = [String: Routable]()
-    private static var execute: ((Route) -> Void)?
-    static func registerRoute(route: Route, routingDelegate: Routable) {
+    private  var routePathToDelegateMap = [String: Routable]()
+    fileprivate var execute: ((Route) -> Void)?
+     func registerRoute(route: Route, routingDelegate: Routable) {
         routePathToDelegateMap[route.path] = routingDelegate
     }
     
-    static func registerRoute(routesDict: [String: Routable]) {
-        for (key, val) in routesDict {
-            routePathToDelegateMap[key] = val
-        }
+    func register(route: String) {
+        self.router.register(route: route)
     }
     
-    static func navigate(urn: String, payload: Any? = nil) throws {
+     func registerRoute(route: String) {
+       self.router.register(route: route)
+    }
+    
+     func navigate(urn: String, payload: Any? = nil) throws {
         
     }
     
-    static func navigate(url: URL, payload: Any? = nil) throws {
+     func navigate(url: URL, payload: Any? = nil) throws {
         
     }
     
-    static func navigate(to screen: Route) throws {
+    func setupExecutionBlock(_ block: @escaping ((Route) -> Void)) {
+        Navigator.sharedInstance.execute = block
+    }
+    
+    
+    func push(to screen: Route) throws {
         execute?(screen)
+    }
+    // private facing API
+    func push(to screen: Route, from vc: UIViewController) throws {
+        try? router.navigate(to: screen, from: vc)
     }
 }

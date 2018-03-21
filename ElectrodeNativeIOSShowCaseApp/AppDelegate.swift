@@ -20,13 +20,37 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
-
+    var mainController: ERNTabBarController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         // Must initialize the container before we can access it within the app.
         ElectrodeWrapper.setupContainer()
+        setupRootVC()
+        setupRouting()
         
         return true
+    }
+}
+
+extension AppDelegate {
+    
+    func setupRootVC() {
+        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let initialVC = sb.instantiateViewController(withIdentifier: "tabBarController")
+        window?.rootViewController = initialVC
+        self.mainController = initialVC as? ERNTabBarController
+    }
+    func setupRouting() {
+        Navigator.sharedInstance.setupExecutionBlock({ [weak self ] route in
+            guard let selectedController = self?.mainController?.selectedViewController else {
+                return
+            }
+            let currentController = (selectedController as? UINavigationController)?.topViewController
+                ?? selectedController
+            try? Navigator.sharedInstance.push(to: route, from: currentController)
+        })
+        
+        Navigator.sharedInstance.registerRoute(route: "welcome")
     }
 }
 

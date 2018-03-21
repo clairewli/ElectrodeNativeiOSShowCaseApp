@@ -9,7 +9,6 @@
 import UIKit
 
 struct ColorPickerRouteDelegate: Routable {
-
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
         
     }
