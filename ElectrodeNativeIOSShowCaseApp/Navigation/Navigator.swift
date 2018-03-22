@@ -38,7 +38,7 @@ class Navigator {
     func setupExecutionBlock(_ block: @escaping ((Route) -> Void)) {
         Navigator.sharedInstance.execute = block
     }
-    
+    func popToRoute
     
     func push(to screen: Route) throws {
         execute?(screen)

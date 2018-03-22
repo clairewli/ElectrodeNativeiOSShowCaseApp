@@ -10,6 +10,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     var viewControllerIndex: Int?
+    @IBAction func popToRootClicked(_ sender: Any) {
+        
+    }
     
     @IBOutlet weak var viewControllerLabel: UILabel!
     

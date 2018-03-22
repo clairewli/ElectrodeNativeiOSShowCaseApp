@@ -45,13 +45,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h92-vP-Dsb">
+                                <rect key="frame" x="146.5" y="482" width="83" height="30"/>
+                                <state key="normal" title="Pop To Root"/>
+                                <connections>
+                                    <action selector="popToRootClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="MgE-U7-CP2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="A5M-7J-77L" secondAttribute="trailing" constant="20" id="4vb-ev-x9I"/>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="h92-vP-Dsb" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="6og-hv-i2i"/>
                             <constraint firstItem="HeT-vW-Kkf" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="15.5" id="GRR-R3-GqO"/>
                             <constraint firstItem="fHA-gU-Rbd" firstAttribute="top" secondItem="HeT-vW-Kkf" secondAttribute="bottom" constant="10" id="Mbg-bR-xkM"/>
+                            <constraint firstItem="h92-vP-Dsb" firstAttribute="top" secondItem="fHA-gU-Rbd" secondAttribute="bottom" constant="23" id="PoS-v8-bMt"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
