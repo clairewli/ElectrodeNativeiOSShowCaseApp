@@ -12,14 +12,14 @@ class WelcomeViewController: UIViewController {
     var viewControllerIndex: Int?
     @IBAction func popToRootClicked(_ sender: Any) {
         let route = PopRoute("welcome", nil, nil, popToRoot: true, animated: true)
-        try? Navigator.sharedInstance.pop(to: route)
+        try? Navigator.sharedInstance.navigate(to: route)
     }
     
     @IBOutlet weak var viewControllerLabel: UILabel!
     
     @IBAction func didPress(_ sender: Any) {
         let route = Route("welcome", nil, viewControllerIndex!+1)
-        try? Navigator.sharedInstance.push(to: route)
+        try? Navigator.sharedInstance.navigate(to: route)
     }
     
     convenience init (index: Int) {

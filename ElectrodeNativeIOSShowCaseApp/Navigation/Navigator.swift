@@ -42,15 +42,14 @@ class Navigator: Routable {
     func resetToInitial(route: Route) throws {
         execute?(route)
     }
+    // convinient API for native internal navigation.
     
-    func push(to screen: Route) throws {
+    func navigate(to screen: Route) throws {
         execute?(screen)
     }
     
-    func pop(to screen: Route) throws {
-        execute?(screen)
-    }
     
+    // call navigation into navigator
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
         try? router.navigate(to: screen, from: currentViewController)
     }
