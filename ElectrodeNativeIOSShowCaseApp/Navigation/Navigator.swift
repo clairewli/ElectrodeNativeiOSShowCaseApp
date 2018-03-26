@@ -11,7 +11,10 @@ import UIKit
 class Navigator: Routable {
     static let sharedInstance = Navigator()
     fileprivate let router = Router()
-    private  var internalScheme = ""
+    private  var internalScheme = "showcase"
+    private var scheme:String {
+        get { return "\(internalScheme)://"}
+    }
     
     private  var routePathToDelegateMap = [String: Routable]()
     fileprivate var execute: ((Route) -> Void)?
@@ -32,7 +35,14 @@ class Navigator: Routable {
     }
     
      func navigate(url: URL, payload: Any? = nil) throws {
-        
+        if let payload = payload {
+            
+        } else {
+            let route = createRoute(url: url)
+            if let route = route {
+                try? Navigator.sharedInstance.navigate(to: route)
+            }
+        }
     }
     
     func setupExecutionBlock(_ block: @escaping ((Route) -> Void)) {
@@ -52,5 +62,20 @@ class Navigator: Routable {
     // call navigation into navigator
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
         try? router.navigate(to: screen, from: currentViewController)
+    }
+    
+    private func createRoute(url: URL) -> Route? {
+        let path = String(url.absoluteString.suffix(from: self.scheme.endIndex))
+        let route = ValidRoute(rawValue: path)
+        if let route = route {
+            let screen = Route(route.rawValue, nil, nil)
+            return screen
+        } else {
+            return nil
+        }
+    }
+    
+    private func parse(url: URL, payload: Any? = nil) -> Route? {
+        return nil
     }
 }

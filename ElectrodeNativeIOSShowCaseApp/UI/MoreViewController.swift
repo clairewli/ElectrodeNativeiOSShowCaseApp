@@ -42,17 +42,22 @@ class MoreViewController: UIViewController {
 }
 
 class MoreViewControllerDataSource: NSObject, UITableViewDataSource {
+    fileprivate let screens = [Route(ValidRoute.welcome.rawValue, nil, 0),
+                   Route(ValidRoute.movieList.rawValue, nil, nil)
+    
+    ]
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return screens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = "cell"
+        cell?.textLabel?.text = screens[indexPath.row].path
         cell?.backgroundColor = UIColor.white
         return cell!
     }
@@ -66,5 +71,12 @@ extension MoreViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let moreDS = self.datasource as? MoreViewControllerDataSource {
+            let route = moreDS.screens[indexPath.row]
+            try? Navigator.sharedInstance.navigate(to: route)
+        }
     }
 }

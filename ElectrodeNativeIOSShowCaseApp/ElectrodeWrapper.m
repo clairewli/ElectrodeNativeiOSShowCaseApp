@@ -26,7 +26,7 @@
 + (void)setupContainer
 {
     ElectrodeContainerConfig *config = [ElectrodeContainerConfig new];
-    config.debugEnabled = NO;
+    config.debugEnabled = YES;
     [ElectrodeReactNative startWithConfigurations:config];
 }
 

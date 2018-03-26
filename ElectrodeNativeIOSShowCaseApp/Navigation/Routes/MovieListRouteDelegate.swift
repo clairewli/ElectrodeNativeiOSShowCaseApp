@@ -10,7 +10,14 @@ import UIKit
 
 struct MovieListRouteDelegate: Routable {
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
-        let moviewListvc = MovieListViewController()
-        currentViewController.navigationController?.pushViewController(moviewListvc, animated: false)
+        
+        if let popRoute = screen as? PopRoute {
+            if (popRoute.popToRoot) {
+                currentViewController.navigationController?.popToRootViewController(animated: popRoute.animated)
+            }
+        } else {
+            let moviewListvc = MovieListViewController()
+            currentViewController.navigationController?.pushViewController(moviewListvc, animated: true)
+        }
     }
 }

@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        try? Navigator.sharedInstance.navigate(url: url)
+        return true
+    }
 }
 
 extension AppDelegate {
@@ -54,6 +59,7 @@ extension AppDelegate {
         })
         
         Navigator.sharedInstance.registerRoute(route: "welcome")
+        Navigator.sharedInstance.registerRoute(route: ValidRoute.movieList.rawValue)
     }
 }
 

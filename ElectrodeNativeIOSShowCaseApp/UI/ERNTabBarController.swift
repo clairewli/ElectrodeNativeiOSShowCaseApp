@@ -29,9 +29,10 @@ class ERNTabBarController: UITabBarController {
         moviewNavController.tabBarItem = UITabBarItem(title: "Movie", image: UIImage(named: "movieBubble"), tag: 1)
         let pickerVC = sb.instantiateViewController(withIdentifier: ColorPickerViewController.identifier)
         pickerVC.tabBarItem   = UITabBarItem(title: "Movie", image: UIImage(named: "colorCircleArrow"), tag: 2)
-        let moreVC = MoreViewController()
-        moreVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
-        self.viewControllers = [welcomeNavController, moviewNavController, pickerVC, moreVC]
+
+        let moreNavController = ERNNavigationController(rootViewController: MoreViewController())
+        moreNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
+        self.viewControllers = [welcomeNavController, moviewNavController, pickerVC, moreNavController]
     }
 
 }

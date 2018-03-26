@@ -10,6 +10,7 @@ import UIKit
 
 enum ValidRoute: String {
     case welcome = "welcome"
+    case movieList = "movieList"
 }
 
 class Router: Routable {
@@ -26,6 +27,8 @@ class Router: Routable {
         switch (route) {
         case .welcome?:
             return WelcomeRouteDelegate()
+        case .movieList?:
+            return MovieListRouteDelegate()
         default:
             return nil
         }
