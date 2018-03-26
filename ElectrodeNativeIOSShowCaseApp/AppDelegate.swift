@@ -47,7 +47,10 @@ extension AppDelegate {
             }
             let currentController = (selectedController as? UINavigationController)?.topViewController
                 ?? selectedController
-            try? Navigator.sharedInstance.push(to: route, from: currentController)
+            
+            try? Navigator.sharedInstance.navigate(to: route, from: currentController)
+            
+            
         })
         
         Navigator.sharedInstance.registerRoute(route: "welcome")

@@ -10,11 +10,17 @@ import UIKit
 
 struct WelcomeRouteDelegate: Routable {
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
-        let index = screen.payload as! Int
-        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let welcomeVC = sb.instantiateViewController(withIdentifier: "welcome") as! WelcomeViewController
-        welcomeVC.viewControllerIndex = index
-        currentViewController.navigationController?.pushViewController(welcomeVC, animated: true)
+        if let popRoute = screen as? PopRoute {
+            if (popRoute.popToRoot) {
+                currentViewController.navigationController?.popToRootViewController(animated: popRoute.animated)
+            }
+        } else {
+            let index = screen.payload as! Int
+            let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let welcomeVC = sb.instantiateViewController(withIdentifier: "welcome") as! WelcomeViewController
+            welcomeVC.viewControllerIndex = index
+            currentViewController.navigationController?.pushViewController(welcomeVC, animated: true)
+        }
         
     }
 }

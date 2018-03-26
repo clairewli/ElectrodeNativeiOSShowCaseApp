@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Navigator {
+class Navigator: Routable {
     static let sharedInstance = Navigator()
     fileprivate let router = Router()
     private  var internalScheme = ""
@@ -38,13 +38,20 @@ class Navigator {
     func setupExecutionBlock(_ block: @escaping ((Route) -> Void)) {
         Navigator.sharedInstance.execute = block
     }
-    func popToRoute
+    
+    func resetToInitial(route: Route) throws {
+        execute?(route)
+    }
     
     func push(to screen: Route) throws {
         execute?(screen)
     }
-    // private facing API
-    func push(to screen: Route, from vc: UIViewController) throws {
-        try? router.navigate(to: screen, from: vc)
+    
+    func pop(to screen: Route) throws {
+        execute?(screen)
+    }
+    
+    func navigate(to screen: Route, from currentViewController: UIViewController) throws {
+        try? router.navigate(to: screen, from: currentViewController)
     }
 }

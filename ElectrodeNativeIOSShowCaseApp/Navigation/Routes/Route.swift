@@ -27,6 +27,18 @@ public enum RouteError: Error {
     case NotFound
     case InvalidArgument(route: Route)
 }
+
+
+public class PopRoute: Route {
+    let popToRoot: Bool
+    let animated: Bool
+    init(_ path: String, _ arguments: [String: String]?, _ payload: Any?, popToRoot: Bool, animated: Bool = false) {
+        self.popToRoot = popToRoot
+        self.animated = animated
+        super.init(path, nil, nil)
+    }
+}
+
 public class Route: NSObject {
     let path: String
     let decodedArgs: [AnyHashable: Any]?

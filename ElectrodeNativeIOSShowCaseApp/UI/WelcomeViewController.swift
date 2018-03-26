@@ -11,7 +11,8 @@ import UIKit
 class WelcomeViewController: UIViewController {
     var viewControllerIndex: Int?
     @IBAction func popToRootClicked(_ sender: Any) {
-        
+        let route = PopRoute("welcome", nil, nil, popToRoot: true, animated: true)
+        try? Navigator.sharedInstance.pop(to: route)
     }
     
     @IBOutlet weak var viewControllerLabel: UILabel!

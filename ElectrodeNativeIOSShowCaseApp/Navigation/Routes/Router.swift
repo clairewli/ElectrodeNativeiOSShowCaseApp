@@ -32,15 +32,12 @@ class Router: Routable {
     }
     
     func navigate(to route: Route, from currentViewController: UIViewController) throws {
-        guard let delegate = routes[route.path] else {
-            errorHandler?.handle(error: RouteError.NotFound, from: currentViewController)
-            return
-        }
-        
-        do {
-            try delegate.navigate(to: route, from: currentViewController)
-        } catch {
-            errorHandler?.handle(error: error, from: currentViewController)
+        if let delegate = routes[route.path] {
+            do {
+                try delegate.navigate(to: route, from: currentViewController)
+            } catch {
+                errorHandler?.handle(error: error, from: currentViewController)
+            }
         }
     }
 }
