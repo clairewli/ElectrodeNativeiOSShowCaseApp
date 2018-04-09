@@ -54,28 +54,41 @@ class MovieListViewController: ERNBaseViewController
      */
     private func configureNavigation()
     {
-        let navigationApi = NavigationAPI()
-        navigationApi.requests.registerNavigateRequestHandler { (data, completion) in
-            
-            // Grab the navigation data and navigation controller.
-            guard
-                let navigationData = data as? NavigateData,
-                let navController = self.navigationController else
-            {
-                // If we have no navigation data, or a navigation controller, then we can't do anything.
-                completion(nil, nil)
+//        let navigationApi = NavigationAPI()
+//        navigationApi.requests.registerNavigateRequestHandler { (data, completion) in
+//
+//            // Grab the navigation data and navigation controller.
+//            guard
+//                let navigationData = data as? NavigateData,
+//                let navController = self.navigationController else
+//            {
+//                // If we have no navigation data, or a navigation controller, then we can't do anything.
+//                completion(nil, nil)
+//                return
+//            }
+//            let payload = ["payload" : navigationData.initialPayload ?? ""]
+//
+//            // Create the view controller for the movie details mini app and push it onto the nav controller.
+//            let detailViewController = ElectrodeReactNative.sharedInstance().miniApp(withName: navigationData.miniAppName, properties: payload)
+//            detailViewController.view.frame = self.view.frame
+//            detailViewController.title = "MovieDetails MiniApp"
+//            navController.pushViewController(detailViewController, animated: true)
+//
+//            // Inform the handler that we are done.
+//            completion(nil, nil)
+//        }
+        
+        let showchaseNavAPI = ShowcaseNavigationAPI()
+        showchaseNavAPI.requests.registerNavigateRequestHandler { (route, completionHandler) in
+            guard let detailRoute = route as? ErnRoute else {
+                completionHandler(nil, nil)
                 return
             }
-            let payload = ["payload" : navigationData.initialPayload ?? ""]
             
-            // Create the view controller for the movie details mini app and push it onto the nav controller.
-            let detailViewController = ElectrodeReactNative.sharedInstance().miniApp(withName: navigationData.miniAppName, properties: payload)
-            detailViewController.view.frame = self.view.frame
-            detailViewController.title = "MovieDetails MiniApp"
-            navController.pushViewController(detailViewController, animated: true)
+
+            let route = Route(detailRoute.path, nil, detailRoute.payload)
+            try? Navigator.sharedInstance.navigate(to: route)
             
-            // Inform the handler that we are done.
-            completion(nil, nil)
         }
     }
 }

@@ -17,7 +17,7 @@ class Navigator: Routable {
     }
     
     private  var routePathToDelegateMap = [String: Routable]()
-    fileprivate var execute: ((Route) -> Void)?
+    fileprivate var execute: ((Route, (() -> Void)?) -> Void)?
      func registerRoute(route: Route, routingDelegate: Routable) {
         routePathToDelegateMap[route.path] = routingDelegate
     }
@@ -45,19 +45,18 @@ class Navigator: Routable {
         }
     }
     
-    func setupExecutionBlock(_ block: @escaping ((Route) -> Void)) {
+    func setupExecutionBlock(_ block: @escaping ((Route, (() -> Void)?) -> Void)) {
         Navigator.sharedInstance.execute = block
     }
     
     func resetToInitial(route: Route) throws {
-        execute?(route)
+        execute?(route, nil)
     }
     // convinient API for native internal navigation.
     
     func navigate(to screen: Route) throws {
-        execute?(screen)
+        execute?(screen, nil)
     }
-    
     
     // call navigation into navigator
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {

@@ -43,7 +43,7 @@ public class Route: NSObject {
     let path: String
     let decodedArgs: [AnyHashable: Any]?
     let payload: Any?
-    init(_ path: String, _ arguments: [String: String]?, _ payload: Any?) {
+    init(_ path: String, _ arguments: [String: String]? = nil, _ payload: Any? = nil) {
         self.path = path
         self.decodedArgs = Utility.decode(arguments)
         self.payload = payload
@@ -55,5 +55,15 @@ struct Utility {
         
         //CLAIRE TODO
         return [AnyHashable: Any]()
+    }
+    
+    static func findRoutingPathWithoutParams(route: Route) -> String? {
+        let path = route.path
+        if let paramsLowerBound = path.range(of:"/?")?.lowerBound {
+            let modulesStr = String(path[..<paramsLowerBound])
+            return modulesStr
+        } else {
+            return path
+        }
     }
 }

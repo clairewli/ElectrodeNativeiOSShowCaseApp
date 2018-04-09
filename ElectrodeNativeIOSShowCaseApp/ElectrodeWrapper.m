@@ -17,6 +17,7 @@
 
 #import "ElectrodeWrapper.h"
 #import "ElectrodeContainer/ElectrodeReactNative.h"
+#import "ElectrodeContainer/ElectrodeCodePushConfig.h"
 
 @implementation ElectrodeWrapper
 
@@ -26,8 +27,10 @@
 + (void)setupContainer
 {
     ElectrodeContainerConfig *config = [ElectrodeContainerConfig new];
-    config.debugEnabled = YES;
-    [ElectrodeReactNative startWithConfigurations:config];
+    config.debugEnabled = NO;
+    ElectrodeCodePushConfig *codepushConfig = [[ElectrodeCodePushConfig alloc] initWithDeploymentKey:@"" serverURL:nil containerConfig:config];
+
+    [ElectrodeReactNative startWithConfigurations:config electrodeCodePushConfig:codepushConfig];
 }
 
 @end

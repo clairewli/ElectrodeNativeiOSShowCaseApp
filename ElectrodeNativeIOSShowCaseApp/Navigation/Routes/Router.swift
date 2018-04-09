@@ -7,35 +7,51 @@
 //
 
 import UIKit
-
+import Foundation
 enum ValidRoute: String {
+    static let ernPrefix = "ern/"
     case welcome = "welcome"
-    case movieList = "movieList"
+    case movieList = "movielistminiapp"
+    case movieDetails = "MovieDetailsMiniApp"
+    var getPath: String {
+            return "\(ValidRoute.ernPrefix)\(self.rawValue)"
+    }
 }
 
 class Router: Routable {
     static let internalScheme = "walmart"
-    var routes = [String: Routable]()
+    private var routes = [String: Routable]()
     var errorHandler: ErrorRoutable?
     func register(route: String) {
-        let delegate = mapRouteWithDelegate(route: route)
-        routes[route] = delegate
+        let validRoute = ValidRoute(rawValue: route)
+        let mappedDelegate = mapRouteWithDelegate(route: validRoute)
+        guard let delegate = mappedDelegate, let route = validRoute else {
+            return
+        }
+        routes[route.getPath] = delegate
+        print(routes)
     }
     
-    private func mapRouteWithDelegate(route: String) -> Routable? {
-        let route = ValidRoute(rawValue: route)
+    private func mapRouteWithDelegate(route: ValidRoute?) -> Routable? {
         switch (route) {
         case .welcome?:
             return WelcomeRouteDelegate()
         case .movieList?:
             return MovieListRouteDelegate()
+        case .movieDetails?:
+            return MovieDetailRouteDelegate()
         default:
             return nil
         }
     }
     
     func navigate(to route: Route, from currentViewController: UIViewController) throws {
-        if let delegate = routes[route.path] {
+        print(routes)
+        guard let validPath = Utility.findRoutingPathWithoutParams(route: route) else {
+            print("do nothing")
+            return
+        }
+        if let delegate = routes[validPath] {
             do {
                 try delegate.navigate(to: route, from: currentViewController)
             } catch {

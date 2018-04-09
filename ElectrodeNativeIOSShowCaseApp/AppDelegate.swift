@@ -46,7 +46,7 @@ extension AppDelegate {
         self.mainController = initialVC as? ERNTabBarController
     }
     func setupRouting() {
-        Navigator.sharedInstance.setupExecutionBlock({ [weak self ] route in
+        Navigator.sharedInstance.setupExecutionBlock({ [weak self ] (route, compeletion) in
             guard let selectedController = self?.mainController?.selectedViewController else {
                 return
             }
@@ -58,8 +58,9 @@ extension AppDelegate {
             
         })
         
-        Navigator.sharedInstance.registerRoute(route: "welcome")
+        Navigator.sharedInstance.registerRoute(route: ValidRoute.movieDetails.rawValue)
         Navigator.sharedInstance.registerRoute(route: ValidRoute.movieList.rawValue)
+        Navigator.sharedInstance.registerRoute(route: ValidRoute.movieDetails.rawValue)
     }
 }
 
