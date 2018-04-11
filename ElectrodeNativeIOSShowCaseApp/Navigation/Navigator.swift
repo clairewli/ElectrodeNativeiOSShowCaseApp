@@ -15,7 +15,9 @@ class Navigator: Routable {
     private var scheme:String {
         get { return "\(internalScheme)://"}
     }
-    
+    init() {
+        registerAPIHandler()
+    }
     private  var routePathToDelegateMap = [String: Routable]()
     fileprivate var execute: ((Route, (() -> Void)?) -> Void)?
      func registerRoute(route: Route, routingDelegate: Routable) {
@@ -61,6 +63,21 @@ class Navigator: Routable {
     // call navigation into navigator
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
         try? router.navigate(to: screen, from: currentViewController)
+    }
+    
+    private func registerAPIHandler() {
+        let showchaseNavAPI = ShowcaseNavigationAPI()
+        showchaseNavAPI.requests.registerNavigateRequestHandler { (route, completionHandler) in
+            guard let detailRoute = route as? ErnRoute else {
+                completionHandler(nil, nil)
+                return
+            }
+            
+            
+            let route = Route(detailRoute.path, nil, detailRoute.payload)
+            try? Navigator.sharedInstance.navigate(to: route)
+            
+        }
     }
     
     private func createRoute(url: URL) -> Route? {

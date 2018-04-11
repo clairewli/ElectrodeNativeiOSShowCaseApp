@@ -20,6 +20,8 @@
 		3091A6982062E48F000D8B62 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A6972062E48F000D8B62 /* WelcomeViewController.swift */; };
 		3095F7502076A9CA00B3208D /* ElectrodeContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3095F74B2076A7F200B3208D /* ElectrodeContainer.framework */; };
 		3095F7512076A9CF00B3208D /* ElectrodeContainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3095F74B2076A7F200B3208D /* ElectrodeContainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30C3C9AE207E9C1F003D2B9A /* NavDemoPushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C9AD207E9C1F003D2B9A /* NavDemoPushDelegate.swift */; };
+		30C3C9B0207E9C2F003D2B9A /* NavDemoModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */; };
 		30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */; };
 		30D579EB20642810003DEC32 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D579EA20642810003DEC32 /* MoreViewController.swift */; };
 		C118CC8A1FEB115C008C4DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C118CC891FEB115C008C4DB5 /* AppDelegate.swift */; };
@@ -82,6 +84,8 @@
 		3091A6952062E42E000D8B62 /* WelcomeRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouteDelegate.swift; sourceTree = "<group>"; };
 		3091A6972062E48F000D8B62 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElectrodeContainer.xcodeproj; path = Carthage/Checkouts/ShowcaseAppContainer/ElectrodeContainer.xcodeproj; sourceTree = SOURCE_ROOT; };
+		30C3C9AD207E9C1F003D2B9A /* NavDemoPushDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDemoPushDelegate.swift; sourceTree = "<group>"; };
+		30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDemoModalDelegate.swift; sourceTree = "<group>"; };
 		30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationCoordinator.swift; sourceTree = "<group>"; };
 		30D579EA20642810003DEC32 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		C118CC861FEB115C008C4DB5 /* ElectrodeNativeIOSShowCaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectrodeNativeIOSShowCaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,8 +129,10 @@
 				3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */,
 				3091A4772060681F000D8B62 /* MovieDetailRouteDelegate.swift */,
 				3091A4792060682C000D8B62 /* ColorPickerRouteDelegate.swift */,
-				3091A47B20606FA2000D8B62 /* Router.swift */,
 				3091A6952062E42E000D8B62 /* WelcomeRouteDelegate.swift */,
+				3091A47B20606FA2000D8B62 /* Router.swift */,
+				30C3C9AD207E9C1F003D2B9A /* NavDemoPushDelegate.swift */,
+				30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -315,8 +321,10 @@
 				30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */,
 				3091A6962062E42E000D8B62 /* WelcomeRouteDelegate.swift in Sources */,
 				3091A4782060681F000D8B62 /* MovieDetailRouteDelegate.swift in Sources */,
+				30C3C9AE207E9C1F003D2B9A /* NavDemoPushDelegate.swift in Sources */,
 				C1B8AE3E1FEC30E50087EF41 /* ElectrodeWrapper.m in Sources */,
 				C118CC8A1FEB115C008C4DB5 /* AppDelegate.swift in Sources */,
+				30C3C9B0207E9C2F003D2B9A /* NavDemoModalDelegate.swift in Sources */,
 				3091A47C20606FA2000D8B62 /* Router.swift in Sources */,
 				306EE3A8204DFD5100820863 /* ERNNavigationController.swift in Sources */,
 				C118CCBE1FEB183C008C4DB5 /* ColorPickerViewController.swift in Sources */,

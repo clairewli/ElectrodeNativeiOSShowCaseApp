@@ -27,7 +27,7 @@
 + (void)setupContainer
 {
     ElectrodeContainerConfig *config = [ElectrodeContainerConfig new];
-    config.debugEnabled = NO;
+    config.debugEnabled = YES;
     ElectrodeCodePushConfig *codepushConfig = [[ElectrodeCodePushConfig alloc] initWithDeploymentKey:@"" serverURL:nil containerConfig:config];
 
     [ElectrodeReactNative startWithConfigurations:config electrodeCodePushConfig:codepushConfig];

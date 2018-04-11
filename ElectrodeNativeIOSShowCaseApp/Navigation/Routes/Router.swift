@@ -13,6 +13,8 @@ enum ValidRoute: String {
     case welcome = "welcome"
     case movieList = "movielistminiapp"
     case movieDetails = "MovieDetailsMiniApp"
+    case navDemoPush = "NavDemoMiniApp/push_screen"
+    case navDemoModal = "ern/NavDemoMiniApp/show_modal"
     var getPath: String {
             return "\(ValidRoute.ernPrefix)\(self.rawValue)"
     }
@@ -40,6 +42,10 @@ class Router: Routable {
             return MovieListRouteDelegate()
         case .movieDetails?:
             return MovieDetailRouteDelegate()
+        case .navDemoPush?:
+            return NavDemoPushDelegate()
+        case .navDemoModal?:
+            return NavDemoModalDelegate()
         default:
             return nil
         }

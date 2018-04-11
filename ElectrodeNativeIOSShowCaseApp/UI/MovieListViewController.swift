@@ -78,18 +78,7 @@ class MovieListViewController: ERNBaseViewController
 //            completion(nil, nil)
 //        }
         
-        let showchaseNavAPI = ShowcaseNavigationAPI()
-        showchaseNavAPI.requests.registerNavigateRequestHandler { (route, completionHandler) in
-            guard let detailRoute = route as? ErnRoute else {
-                completionHandler(nil, nil)
-                return
-            }
-            
 
-            let route = Route(detailRoute.path, nil, detailRoute.payload)
-            try? Navigator.sharedInstance.navigate(to: route)
-            
-        }
     }
 }
 
