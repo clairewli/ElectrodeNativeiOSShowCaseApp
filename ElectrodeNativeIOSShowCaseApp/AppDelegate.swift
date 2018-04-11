@@ -60,7 +60,7 @@ extension AppDelegate {
         
         Navigator.sharedInstance.registerRoute(route: ValidRoute.movieDetails.rawValue)
         Navigator.sharedInstance.registerRoute(route: ValidRoute.movieList.rawValue)
-        Navigator.sharedInstance.registerRoute(route: ValidRoute.movieDetails.rawValue)
+        Navigator.sharedInstance.registerRoute(route: ValidRoute.welcome.rawValue)
     }
 }
 

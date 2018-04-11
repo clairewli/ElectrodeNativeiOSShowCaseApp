@@ -11,14 +11,14 @@ import UIKit
 class WelcomeViewController: UIViewController {
     var viewControllerIndex: Int?
     @IBAction func popToRootClicked(_ sender: Any) {
-        let route = PopRoute("welcome", nil, nil, popToRoot: true, animated: true)
+        let route = PopRoute(ValidRoute.welcome.getPath, nil, nil, popToRoot: true, animated: true)
         try? Navigator.sharedInstance.navigate(to: route)
     }
     
     @IBOutlet weak var viewControllerLabel: UILabel!
     
     @IBAction func didPress(_ sender: Any) {
-        let route = Route("welcome", nil, viewControllerIndex!+1)
+        let route = Route(ValidRoute.welcome.getPath, nil, viewControllerIndex!+1)
         try? Navigator.sharedInstance.navigate(to: route)
     }
     
