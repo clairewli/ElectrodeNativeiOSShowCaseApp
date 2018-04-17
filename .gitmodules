@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/electrode-native-showcaseapp-ios-container"]
+	url = https://github.com/electrode-io/electrode-native-showcaseapp-ios-container.git
+	path = Carthage/Checkouts/electrode-native-showcaseapp-ios-container
+[submodule "Carthage/Checkouts/ShowcaseAppContainer"]
+	path = Carthage/Checkouts/ShowcaseAppContainer
+	url = git@gecgithub01.walmart.com:w0l00qx/ShowcaseAppContainer.git

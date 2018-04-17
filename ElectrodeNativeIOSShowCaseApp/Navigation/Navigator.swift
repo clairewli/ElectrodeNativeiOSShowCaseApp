@@ -64,7 +64,7 @@ class Navigator: Routable {
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
         try? router.navigate(to: screen, from: currentViewController)
     }
-    
+        
     private func registerAPIHandler() {
         let showchaseNavAPI = ShowcaseNavigationAPI()
         showchaseNavAPI.requests.registerNavigateRequestHandler { (route, completionHandler) in
@@ -72,10 +72,14 @@ class Navigator: Routable {
                 completionHandler(nil, nil)
                 return
             }
-            
-            
-            let route = Route(detailRoute.path, nil, detailRoute.payload)
+            let route: Route
+            if (detailRoute.popType?.popToRoot == true) {
+                route = PopRoute(detailRoute.path, nil, detailRoute.payload, popToRoot: true, animated: true)
+            } else {
+                route = Route(detailRoute.path, nil, detailRoute.payload)
+            }
             try? Navigator.sharedInstance.navigate(to: route)
+            completionHandler(nil,nil)
             
         }
     }

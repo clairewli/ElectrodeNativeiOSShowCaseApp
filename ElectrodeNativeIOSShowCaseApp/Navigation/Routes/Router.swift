@@ -14,7 +14,7 @@ enum ValidRoute: String {
     case movieList = "movielistminiapp"
     case movieDetails = "MovieDetailsMiniApp"
     case navDemoPush = "NavDemoMiniApp/push_screen"
-    case navDemoModal = "ern/NavDemoMiniApp/show_modal"
+    case navDemoModal = "NavDemoMiniApp/show_modal"
     var getPath: String {
             return "\(ValidRoute.ernPrefix)\(self.rawValue)"
     }

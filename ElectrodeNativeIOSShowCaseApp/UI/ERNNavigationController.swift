@@ -20,8 +20,13 @@ class ERNNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        self.navigationBar.barTintColor = UIColor.blue
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismiss))
+        let cancel2 = UIBarButtonItem(title: "Test", style: .plain, target: self, action: nil)
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = cancel2
+        self.navigationItem.rightBarButtonItem = cancel
+        self.title = "Modal"
     }
 
     override func didReceiveMemoryWarning() {

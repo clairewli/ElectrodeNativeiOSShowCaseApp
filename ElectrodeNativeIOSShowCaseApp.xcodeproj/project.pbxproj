@@ -18,8 +18,6 @@
 		3091A47C20606FA2000D8B62 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A47B20606FA2000D8B62 /* Router.swift */; };
 		3091A6962062E42E000D8B62 /* WelcomeRouteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A6952062E42E000D8B62 /* WelcomeRouteDelegate.swift */; };
 		3091A6982062E48F000D8B62 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A6972062E48F000D8B62 /* WelcomeViewController.swift */; };
-		3095F7502076A9CA00B3208D /* ElectrodeContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3095F74B2076A7F200B3208D /* ElectrodeContainer.framework */; };
-		3095F7512076A9CF00B3208D /* ElectrodeContainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3095F74B2076A7F200B3208D /* ElectrodeContainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		30C3C9AE207E9C1F003D2B9A /* NavDemoPushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C9AD207E9C1F003D2B9A /* NavDemoPushDelegate.swift */; };
 		30C3C9B0207E9C2F003D2B9A /* NavDemoModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */; };
 		30CA8E36204E15CC0007D266 /* ERNNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */; };
@@ -34,26 +32,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3095F74A2076A7F200B3208D /* PBXContainerItemProxy */ = {
+		30849B592086A42900CF2297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */;
+			containerPortal = 30849B472086A42900CF2297 /* ElectrodeContainer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 485009E31E2FF23B009B6610;
 			remoteInfo = ElectrodeContainer;
 		};
-		3095F74C2076A7F200B3208D /* PBXContainerItemProxy */ = {
+		30849B5B2086A42900CF2297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */;
+			containerPortal = 30849B472086A42900CF2297 /* ElectrodeContainer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 485009EC1E2FF23C009B6610;
 			remoteInfo = ElectrodeContainerTests;
-		};
-		3095F74E2076A9C700B3208D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 485009E21E2FF23B009B6610;
-			remoteInfo = ElectrodeContainer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -64,7 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3095F7512076A9CF00B3208D /* ElectrodeContainer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +65,7 @@
 		306EE3A3204DFC3000820863 /* ERNTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNTabBarController.swift; sourceTree = "<group>"; };
 		306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNBaseViewController.swift; sourceTree = "<group>"; };
 		306EE3A7204DFD5100820863 /* ERNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationController.swift; sourceTree = "<group>"; };
+		30849B472086A42900CF2297 /* ElectrodeContainer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElectrodeContainer.xcodeproj; path = Carthage/Checkouts/ShowcaseAppContainer/ElectrodeContainer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3091A47120605C77000D8B62 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3091A47320605D56000D8B62 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRouteDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +74,6 @@
 		3091A47B20606FA2000D8B62 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3091A6952062E42E000D8B62 /* WelcomeRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouteDelegate.swift; sourceTree = "<group>"; };
 		3091A6972062E48F000D8B62 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElectrodeContainer.xcodeproj; path = Carthage/Checkouts/ShowcaseAppContainer/ElectrodeContainer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		30C3C9AD207E9C1F003D2B9A /* NavDemoPushDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDemoPushDelegate.swift; sourceTree = "<group>"; };
 		30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDemoModalDelegate.swift; sourceTree = "<group>"; };
 		30CA8E35204E15CC0007D266 /* ERNNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationCoordinator.swift; sourceTree = "<group>"; };
@@ -106,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3095F7502076A9CA00B3208D /* ElectrodeContainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,10 +105,19 @@
 		306EE37E204DF74E00820863 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */,
+				30849B472086A42900CF2297 /* ElectrodeContainer.xcodeproj */,
 			);
 			name = Frameworks;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		30849B482086A42900CF2297 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30849B5A2086A42900CF2297 /* ElectrodeContainer.framework */,
+				30849B5C2086A42900CF2297 /* ElectrodeContainerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3091A46F20605C10000D8B62 /* Routes */ = {
@@ -135,15 +133,6 @@
 				30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */,
 			);
 			path = Routes;
-			sourceTree = "<group>";
-		};
-		3095F73A2076A7F200B3208D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3095F74B2076A7F200B3208D /* ElectrodeContainer.framework */,
-				3095F74D2076A7F200B3208D /* ElectrodeContainerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		30CA9022204F40610007D266 /* Navigation */ = {
@@ -227,7 +216,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				3095F74F2076A9C700B3208D /* PBXTargetDependency */,
 			);
 			name = ElectrodeNativeIOSShowCaseApp;
 			productName = ElectrodeNativeIOSShowCaseApp;
@@ -264,8 +252,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3095F73A2076A7F200B3208D /* Products */;
-					ProjectRef = 3095F7392076A7F200B3208D /* ElectrodeContainer.xcodeproj */;
+					ProductGroup = 30849B482086A42900CF2297 /* Products */;
+					ProjectRef = 30849B472086A42900CF2297 /* ElectrodeContainer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -276,18 +264,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3095F74B2076A7F200B3208D /* ElectrodeContainer.framework */ = {
+		30849B5A2086A42900CF2297 /* ElectrodeContainer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ElectrodeContainer.framework;
-			remoteRef = 3095F74A2076A7F200B3208D /* PBXContainerItemProxy */;
+			remoteRef = 30849B592086A42900CF2297 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3095F74D2076A7F200B3208D /* ElectrodeContainerTests.xctest */ = {
+		30849B5C2086A42900CF2297 /* ElectrodeContainerTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ElectrodeContainerTests.xctest;
-			remoteRef = 3095F74C2076A7F200B3208D /* PBXContainerItemProxy */;
+			remoteRef = 30849B5B2086A42900CF2297 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -333,14 +321,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3095F74F2076A9C700B3208D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ElectrodeContainer;
-			targetProxy = 3095F74E2076A9C700B3208D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C118CC8F1FEB115C008C4DB5 /* Main.storyboard */ = {

@@ -9,6 +9,7 @@
 import Foundation
 struct NavDemoPushDelegate: Routable {
     func navigate(to screen: Route, from currentViewController: UIViewController) throws {
+        
         let payload = (screen.payload as? String) ?? ""
         let props = ["payload": payload] as [AnyHashable: Any]
         let miniAppViewController = ElectrodeReactNative.sharedInstance().miniApp(withName: "NavDemoMiniApp/push_screen", properties: props)

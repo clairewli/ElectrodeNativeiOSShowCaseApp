@@ -53,9 +53,11 @@ extension AppDelegate {
             let currentController = (selectedController as? UINavigationController)?.topViewController
                 ?? selectedController
             
-            try? Navigator.sharedInstance.navigate(to: route, from: currentController)
-            
-            
+            if let popRoute = route as? PopRoute {
+                currentController.navigationController?.popToRootViewController(animated: popRoute.animated)
+            } else {
+                try? Navigator.sharedInstance.navigate(to: route, from: currentController)
+            }
         })
         
         Navigator.sharedInstance.registerRoute(route: ValidRoute.movieDetails.rawValue)
