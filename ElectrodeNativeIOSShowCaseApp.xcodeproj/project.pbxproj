@@ -10,6 +10,7 @@
 		306EE3A4204DFC3000820863 /* ERNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A3204DFC3000820863 /* ERNTabBarController.swift */; };
 		306EE3A6204DFC6E00820863 /* ERNBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */; };
 		306EE3A8204DFD5100820863 /* ERNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306EE3A7204DFD5100820863 /* ERNNavigationController.swift */; };
+		30849CB12089148700CF2297 /* NavDemoCustomButtonsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30849CB02089148700CF2297 /* NavDemoCustomButtonsDelegate.swift */; };
 		3091A47220605C77000D8B62 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A47120605C77000D8B62 /* Route.swift */; };
 		3091A47420605D56000D8B62 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A47320605D56000D8B62 /* Navigator.swift */; };
 		3091A476206067F2000D8B62 /* MovieListRouteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */; };
@@ -66,6 +67,7 @@
 		306EE3A5204DFC6E00820863 /* ERNBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNBaseViewController.swift; sourceTree = "<group>"; };
 		306EE3A7204DFD5100820863 /* ERNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERNNavigationController.swift; sourceTree = "<group>"; };
 		30849B472086A42900CF2297 /* ElectrodeContainer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElectrodeContainer.xcodeproj; path = Carthage/Checkouts/ShowcaseAppContainer/ElectrodeContainer.xcodeproj; sourceTree = SOURCE_ROOT; };
+		30849CB02089148700CF2297 /* NavDemoCustomButtonsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDemoCustomButtonsDelegate.swift; sourceTree = "<group>"; };
 		3091A47120605C77000D8B62 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3091A47320605D56000D8B62 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		3091A475206067F2000D8B62 /* MovieListRouteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRouteDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				3091A47B20606FA2000D8B62 /* Router.swift */,
 				30C3C9AD207E9C1F003D2B9A /* NavDemoPushDelegate.swift */,
 				30C3C9AF207E9C2F003D2B9A /* NavDemoModalDelegate.swift */,
+				30849CB02089148700CF2297 /* NavDemoCustomButtonsDelegate.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30849CB12089148700CF2297 /* NavDemoCustomButtonsDelegate.swift in Sources */,
 				3091A47220605C77000D8B62 /* Route.swift in Sources */,
 				3091A6982062E48F000D8B62 /* WelcomeViewController.swift in Sources */,
 				3091A47420605D56000D8B62 /* Navigator.swift in Sources */,

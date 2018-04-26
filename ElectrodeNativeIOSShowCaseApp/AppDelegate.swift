@@ -65,6 +65,8 @@ extension AppDelegate {
         Navigator.sharedInstance.registerRoute(route: ValidRoute.welcome.rawValue)
         Navigator.sharedInstance.registerRoute(route: ValidRoute.navDemoPush.rawValue)
         Navigator.sharedInstance.registerRoute(route: ValidRoute.navDemoModal.rawValue)
+        Navigator.sharedInstance.registerRoute(route: ValidRoute.navCustomButtons.rawValue)
+
     }
 }
 

@@ -26,11 +26,12 @@ class NavDemoModalDelegate: NSObject, Routable {
         let nav  = ERNNavigationController(rootViewController: baseVC)
         let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismiss))
         let cancel2 = UIBarButtonItem(title: "Test", style: .plain, target: self, action: nil)
-        nav.navigationItem.hidesBackButton = true
-        nav.navigationItem.leftBarButtonItem = cancel2
-        nav.navigationItem.rightBarButtonItem = cancel
-        nav.title = "Modal"
+        baseVC.navigationItem.hidesBackButton = true
+        baseVC.navigationItem.leftBarButtonItem = cancel2
+        baseVC.navigationItem.rightBarButtonItem = cancel
+        baseVC.title = "Modal"
         currentViewController.navigationController?.present(nav, animated: true, completion: nil)
+        self.modalNav = nav
     }
     
     @objc func dismiss() {
