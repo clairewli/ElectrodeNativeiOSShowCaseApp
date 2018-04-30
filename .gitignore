@@ -77,3 +77,4 @@ fastlane/screenshots
 
 *.orig
 *.rej
+Carthage
